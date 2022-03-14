@@ -52,3 +52,26 @@ body {
 .row #title {
   flex: 70%;
 }
+
+.Pais{
+  display: flex;
+  border: 1px solid black;
+  align-items: center;
+  margin: 0%;
+  padding: 0%;
+}
+
+.Pais #NamePais{
+  font-size: medium;
+  width: 60px;
+  flex:70%
+}
+
+.Pais #ImgPais{
+  flex: 30%;
+  object-fit:;
+}
+
+.Pais #ImgPais img{
+  max-width: 20px;
+}

@@ -1,10 +1,18 @@
 import React from 'react'
+import '../App.css'
+import logoPais from '../pictures/descarga.jpeg'
+
+
 
 function Pais() {
     return (
-        <div className='pais'>
+        <div className='Pais'>
+            <div id='NamePais'>
             <h2>pais</h2>
-            <img src="../../public/descarga.jpeg" alt="Escudo de la asosiacion de futbol del pais" />
+            </div>
+            <div id='ImgPais'>
+                <img src={logoPais} alt="" srcset="" />
+            </div>
         </div>
     )
 }
