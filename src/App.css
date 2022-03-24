@@ -69,7 +69,7 @@ body {
 
 .Pais #ImgPais{
   flex: 30%;
-  object-fit:;
+  object-fit:inherit;
 }
 
 .Pais #ImgPais img{

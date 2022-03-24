@@ -1,13 +1,17 @@
 import './App.css';
-import Home from './pages/Home';
-import Sidebar from './pages/Sidebar';
+import { Grid } from '@material-ui/core';
+// import Grupos from './pages/Grupos';
+import Grupo from './components/Grupo';
 
 function App() {
   return (
-    <div className="App">
-      <Sidebar />
-      <Home />
-    </div>
+    <Grid container direction="column">
+      <Grid item container>
+        <Grid item xs={12}>
+          <Grupo />
+        </Grid>
+      </Grid>
+    </Grid>
   );
 }
 

@@ -11,7 +11,7 @@ function Pais() {
             <h2>pais</h2>
             </div>
             <div id='ImgPais'>
-                <img src={logoPais} alt="" srcset="" />
+                <img src={logoPais} alt="" />
             </div>
         </div>
     )
