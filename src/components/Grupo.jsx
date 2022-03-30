@@ -1,7 +1,7 @@
 import React from 'react'
 import { withStyles, makeStyles } from '@material-ui/core/styles'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core'
-import Game from './Game';
+import Pais from './Pais';
 
 /*
     Este componente va a renderizar como estan coformados los grupos
@@ -9,14 +9,11 @@ import Game from './Game';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
-        background: '#53112A',
         padding: 0,
         color: "white",
-        border: 0
-
+        border: 0,
     },
     body: {
-        background: '#882947',
         fontSize: 14,
         padding: 0,
         color: "white",
@@ -27,21 +24,19 @@ const StyledTableCell = withStyles((theme) => ({
 
 const StyledTableHead = withStyles((theme) => ({
     root: {
-        background: '#53112A',
+        background: '#6d0019'
     }
 }))(TableHead)
 
 const StyledTableRow = withStyles((theme) => ({
     root: {
-        "&:nth-of-type(odd)": {
-            backgroundColor: theme.palette.action.hover
-        }
+        background: '#550B26'
     }
 }))(TableRow);
 
 const useStyles = makeStyles({
     table: {
-        maxWidth: 700
+        maxWidth: 200
     },
 });
 
@@ -50,7 +45,7 @@ function Grupo() {
     const classes = useStyles();
 
     return (
-        <TableContainer component={Paper} style={{ width: "400px"}}>
+        <TableContainer component={Paper} style={{ width: "190px"}}>
             <Table className={classes.table} aria-label="customized table">
                 <StyledTableHead>
                     <TableRow>
@@ -59,16 +54,16 @@ function Grupo() {
                 </StyledTableHead>
                 <TableBody>
                     <StyledTableRow>
-                        <StyledTableCell align="center"><Game /></StyledTableCell>
+                        <StyledTableCell align="center"><Pais /></StyledTableCell>
                     </StyledTableRow>
                     <StyledTableRow>
-                        <StyledTableCell align="center">Argentina</StyledTableCell>
+                        <StyledTableCell align="center"><Pais /></StyledTableCell>
                     </StyledTableRow>
                     <StyledTableRow>
-                        <StyledTableCell align="center">Argentina</StyledTableCell>
+                        <StyledTableCell align="center"><Pais /></StyledTableCell>
                     </StyledTableRow>
                     <StyledTableRow>
-                        <StyledTableCell align="center">Argentina</StyledTableCell>
+                        <StyledTableCell align="center"><Pais /></StyledTableCell>
                     </StyledTableRow>
                 </TableBody>
             </Table>

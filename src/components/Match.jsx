@@ -11,6 +11,8 @@ import Grid from '@mui/material/Grid'
     game va a respresentar los juegos, entre local y visitante,
     le llegaran props como resultado nombre de los paises que se enfrentan,
     estadio y hora a la que se jugaria el mismo.
+
+    TODO: Cambiar el nombre del componente de game a match
 */
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-function Game() {
+function Match() {
 
     const classes = useStyles();
 
@@ -60,4 +62,4 @@ function Game() {
     )
 }
 
-export default Game
+export default Match
