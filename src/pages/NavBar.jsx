@@ -37,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'auto',
     },
     content: {
-        paddingTop: 100,
         flexGrow: 1,
         padding: theme.spacing(3),
     },
@@ -89,6 +88,7 @@ export default function ClippedDrawer(props) {
                 </div>
             </Drawer>
             <main className={classes.content}>
+                <Toolbar />
                 {props.props}
             </main>
         </div>
