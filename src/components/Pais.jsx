@@ -27,21 +27,18 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-function Pais() {
-    // voy a diseñar el componente pais usando mui 
+function Pais( props = 'Pais' ){
     const classes = useStyles()
 
-    
-    
     return (
-        <Grid container justifyContent='center' spacing={2} >
+        <Grid container spacing={2}  >
                 <Grid item>
                     <Avatar alt="Logo Pais" src={logoPais} className={classes.small} />
                 </Grid>
-                <Grid item>
-                    <Typography variant="body1" color="initial">Argentina</Typography>
+                <Grid item xs={6}>
+                    <Typography variant="body1" color="initial">{props.name}</Typography>
                 </Grid>
-            </Grid>
+        </Grid>
     )
 }
 

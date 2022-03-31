@@ -5,6 +5,8 @@ import Pais from './Pais';
 
 /*
     Este componente va a renderizar como estan coformados los grupos
+
+    TODO: Ver el tema de las key, ya que nos esta largando un error de renderizado por falta de key
 */
 
 const StyledTableCell = withStyles((theme) => ({
@@ -17,7 +19,7 @@ const StyledTableCell = withStyles((theme) => ({
         fontSize: 14,
         padding: 0,
         color: "white",
-        border:0,
+        border: 0,
         paddingBlock: 5
     }
 }))(TableCell);
@@ -40,31 +42,27 @@ const useStyles = makeStyles({
     },
 });
 
-function Grupo() {
+
+function Grupo(props) {
+
+    const { grupo, equipos } = props;
 
     const classes = useStyles();
 
     return (
-        <TableContainer component={Paper} style={{ width: "190px"}}>
+        <TableContainer component={Paper} style={{ width: "190px" }}>
             <Table className={classes.table} aria-label="customized table">
                 <StyledTableHead>
                     <TableRow>
-                        <StyledTableCell align="center">Grupo X</StyledTableCell>
+                        <StyledTableCell align="center">{grupo}</StyledTableCell>
                     </TableRow>
                 </StyledTableHead>
                 <TableBody>
-                    <StyledTableRow>
-                        <StyledTableCell align="center"><Pais /></StyledTableCell>
-                    </StyledTableRow>
-                    <StyledTableRow>
-                        <StyledTableCell align="center"><Pais /></StyledTableCell>
-                    </StyledTableRow>
-                    <StyledTableRow>
-                        <StyledTableCell align="center"><Pais /></StyledTableCell>
-                    </StyledTableRow>
-                    <StyledTableRow>
-                        <StyledTableCell align="center"><Pais /></StyledTableCell>
-                    </StyledTableRow>
+                    {equipos.map((pais) => (
+                        <StyledTableRow >
+                            <StyledTableCell align="center"><Pais name={pais} /></StyledTableCell>
+                        </StyledTableRow>
+                    ))}
                 </TableBody>
             </Table>
         </TableContainer>
