@@ -1,18 +1,16 @@
 import './App.css';
-import { Grid } from '@material-ui/core';
+// import { Grid } from '@material-ui/core';
 // import Grupos from './pages/Grupos';
-import Grupo from './components/Grupo';
+// import Grupo from './components/Grupo';
+import NavBar from './pages/NavBar';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <Grid container direction="column">
-      <Grid item container>
-        <Grid item xs={12}>
-          <Grupo />
-        </Grid>
-      </Grid>
-    </Grid>
-  );
-}
-
-export default App;
+    <NavBar props={<Home />} />
+    );
+  }
+  
+  export default App;
+  
+  
