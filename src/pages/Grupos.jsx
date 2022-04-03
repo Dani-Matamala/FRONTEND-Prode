@@ -19,6 +19,7 @@ const grupos = [
 
 function Grupos() {
   // TODO: Esto va a renderizar el total de los grupos del torneo
+  // TODO: eliminar scroll
   return (
     <Grid container spacing={2}>
       {grupos.map(({grupo, equipos, key}) => (

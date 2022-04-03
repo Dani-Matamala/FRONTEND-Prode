@@ -40,6 +40,15 @@ const useStyles = makeStyles({
     table: {
         maxWidth: 200
     },
+    container: {
+        minWidth: "200px",
+        scrollbarWidth: "none" /* Firefox */,
+        maxHeight: 440,
+        "&::-webkit-scrollbar": {
+            display: "none"
+        } /* Chrome */
+
+    }
 });
 
 
@@ -50,7 +59,7 @@ function Grupo(props) {
     const classes = useStyles();
 
     return (
-        <TableContainer component={Paper} style={{ width: "190px" }}>
+        <TableContainer component={Paper} className={classes.container} >
             <Table className={classes.table} aria-label="customized table">
                 <StyledTableHead>
                     <TableRow>
