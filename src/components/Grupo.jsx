@@ -41,13 +41,10 @@ const useStyles = makeStyles({
         maxWidth: 200
     },
     container: {
+        flex: 1,
+        maxWidth:"auto",
+        overflow: 'hidden',
         minWidth: "200px",
-        scrollbarWidth: "none" /* Firefox */,
-        maxHeight: 440,
-        "&::-webkit-scrollbar": {
-            display: "none"
-        } /* Chrome */
-
     }
 });
 
@@ -69,7 +66,7 @@ function Grupo(props) {
                 <TableBody>
                     {equipos.map((pais) => (
                         <StyledTableRow >
-                            <StyledTableCell align="center"><Pais name={pais} /></StyledTableCell>
+                            <StyledTableCell><Pais country={pais.country} code={pais.code} /></StyledTableCell>
                         </StyledTableRow>
                     ))}
                 </TableBody>

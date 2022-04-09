@@ -1,6 +1,5 @@
 import React from 'react'
 import '../App.css'
-import logoPais from '../pictures/descarga.jpeg'
 import { makeStyles } from '@material-ui/core';
 import { Avatar, Grid, Typography } from '@material-ui/core';
 
@@ -27,17 +26,18 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-function Pais( props = 'Pais' ){
+function Pais(props = 'Pais') {
     const classes = useStyles()
 
     return (
-        <Grid container spacing={2}  >
-                <Grid item>
-                    <Avatar alt="Logo Pais" src={logoPais} className={classes.small} />
-                </Grid>
-                <Grid item xs={6}>
-                    <Typography variant="body1" color="initial">{props.name}</Typography>
-                </Grid>
+        <Grid container spacing={2} alignContent='center' >
+            <Grid item>
+                <Avatar variant='rounded' alt="Logo Pais" src={`https://flagcdn.com/20x15/${props.code}.png`
+                } className={classes.small} />
+            </Grid>
+            <Grid item>
+                <Typography noWrap variant="body1" color="initial">{props.country}</Typography>
+            </Grid>
         </Grid>
     )
 }

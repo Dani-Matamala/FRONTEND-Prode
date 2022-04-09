@@ -14,7 +14,7 @@ import GroupIcon from '@material-ui/icons/Group';
 import PersonIcon from '@material-ui/icons/Person';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import TodayIcon from '@material-ui/icons/Today';
-
+import Home from './Home';
 
 
 const drawerWidth = 240;
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
-        background: '#6F102E'
+        background: '#6F102E',
     },
     drawer: {
         width: drawerWidth,
@@ -88,8 +88,7 @@ export default function ClippedDrawer(props) {
                 </div>
             </Drawer>
             <main className={classes.content}>
-                <Toolbar />
-                {props.props}
+                <Home />
             </main>
         </div>
     );
