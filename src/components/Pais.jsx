@@ -32,7 +32,7 @@ function Pais(props = 'Pais') {
     return (
         <Grid container spacing={2} alignContent='center' >
             <Grid item>
-                <Avatar variant='rounded' alt="Logo Pais" src={`https://flagcdn.com/20x15/${props.code}.png`
+                <Avatar variant='rounded' alt="Logo Pais" src={`https://flagcdn.com/40x30/${props.code}.png`
                 } className={classes.small} />
             </Grid>
             <Grid item>
@@ -43,13 +43,3 @@ function Pais(props = 'Pais') {
 }
 
 export default Pais
-
-
-// <div className='Pais'>
-        //     <div id='NamePais'>
-        //     <h2>pais</h2>
-        //     </div>
-        //     <div id='ImgPais'>
-        //         <img src={logoPais} alt="" />
-        //     </div>
-        // </div>
