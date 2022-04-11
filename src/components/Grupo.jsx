@@ -1,7 +1,7 @@
 import React from 'react'
-import { withStyles, makeStyles } from '@material-ui/core/styles'
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core'
 import Pais from './Pais';
+import Typography from '@mui/material/Typography'
+import { makeStyles } from '@material-ui/core/styles';
 
 /*
     Este componente va a renderizar como estan coformados los grupos
@@ -9,42 +9,17 @@ import Pais from './Pais';
     TODO: Ver el tema de las key, ya que nos esta largando un error de renderizado por falta de key
 */
 
-const StyledTableCell = withStyles((theme) => ({
-    head: {
-        padding: 0,
-        color: "white",
-        border: 0,
-    },
-    body: {
-        fontSize: 14,
-        padding: 0,
-        color: "white",
-        border: 0,
-        paddingBlock: 5
-    }
-}))(TableCell);
-
-const StyledTableHead = withStyles((theme) => ({
-    root: {
-        background: '#6d0019'
-    }
-}))(TableHead)
-
-const StyledTableRow = withStyles((theme) => ({
-    root: {
-        background: '#550B26'
-    }
-}))(TableRow);
 
 const useStyles = makeStyles({
-    table: {
-        maxWidth: 200
+    p: {
+        backgroundColor: '#6d0019',
+        color: 'white',
+        borderRadius: '5px 5px 0px 0px',
     },
-    container: {
-        flex: 1,
-        maxWidth:"auto",
-        overflow: 'hidden',
-        minWidth: "200px",
+    div: {
+        backgroundColor: '#550B26',
+        color: 'white',
+        borderRadius: '5px',
     }
 });
 
@@ -56,22 +31,14 @@ function Grupo(props) {
     const classes = useStyles();
 
     return (
-        <TableContainer component={Paper} className={classes.container} >
-            <Table className={classes.table} aria-label="customized table">
-                <StyledTableHead>
-                    <TableRow>
-                        <StyledTableCell align="center">{grupo}</StyledTableCell>
-                    </TableRow>
-                </StyledTableHead>
-                <TableBody>
-                    {equipos.map((pais) => (
-                        <StyledTableRow >
-                            <StyledTableCell><Pais country={pais.country} code={pais.code} /></StyledTableCell>
-                        </StyledTableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+        <div className={classes.div}>
+            <Typography align='center'
+                variant="body1"
+                className={classes.p}>{grupo}</Typography>
+            {equipos.map((pais) => (
+                <Pais country={pais.country} code={pais.code} />
+            ))}
+        </div>
     )
 }
 

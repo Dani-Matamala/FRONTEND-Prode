@@ -15,6 +15,8 @@ import PersonIcon from '@material-ui/icons/Person';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import TodayIcon from '@material-ui/icons/Today';
 import Home from './Home';
+import { autocompleteClasses } from '@mui/material';
+import Grupos from './Grupos';
 
 
 const drawerWidth = 240;
@@ -37,8 +39,15 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'auto',
     },
     content: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
+        margin: 0,
+        paddingTop: '80px',
+        position: 'static',
+        background: 'linear-gradient(to left, #6F102E, #FF004C, #6F102E)',
+        border: "solid 1px black",
+        height: '100vh',
+        width: '100vw',
+        gridTemplateRows: "1fr 1fr 1fr 1fr",
+        overflowX: 'hidden',
     },
 }));
 
@@ -88,7 +97,8 @@ export default function ClippedDrawer(props) {
                 </div>
             </Drawer>
             <main className={classes.content}>
-                <Home />
+                <Toolbar />
+                <Grupos />
             </main>
         </div>
     );

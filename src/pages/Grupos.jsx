@@ -1,6 +1,6 @@
 import React from 'react'
 import Grupo from '../components/Grupo'
-import { Grid } from "@material-ui/core";
+import { Grid, Paper } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 
 function newGrupo(grupo, equipos, key) {
@@ -38,9 +38,6 @@ const IRN = newPais('ir', 'Iran');
 const HRV = newPais('hr', 'Croacia');
 const SAU = newPais('sa', 'Arabia Saudita');
 
-
-
-
 const grupos = [
   newGrupo('A', [BRA, ESP, CRI, URU], 1),
   newGrupo('B', [CMR, NGA, CIV, ENG], 2),
@@ -53,23 +50,32 @@ const grupos = [
 ]
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-        maxWidth: "864px",
-        marginTop:'80px'  
-    }
-}))
+  root: {
+    display: 'grid',
+    gridTemplateColumns: '214px 214px 214px 214px',
+    gridGap: theme.spacing(3),
+    margin: 0,
+  }
+}));
 
 function Grupos() {
   // TODO: Esto va a renderizar el total de los grupos del torneo
   // TODO: eliminar scroll, renderizar 2 filas de 4 grupos, 
-  
+
   const classes = useStyles();
 
   return (
-    <Grid container spacing={2} className={classes.root}>
-      {grupos.map(({grupo, equipos, key}) => (
-        <Grid item key={key}><Grupo grupo={grupo} equipos={equipos}/></Grid>
+    <Grid container
+      spacing={2}
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      className={classes.root}>
+      {grupos.map(({ grupo, equipos, key }) => (
+        <Grid item
+          key={key}>
+          <Grupo grupo={grupo} equipos={equipos} />
+        </Grid>
       ))}
     </Grid>
   )

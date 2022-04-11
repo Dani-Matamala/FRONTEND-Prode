@@ -7,9 +7,8 @@ import { Avatar, Grid, Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        '& > *': {
-            margin: theme.spacing(0),
-        },
+        margin: 0,
+        maxWidth: '214px',
     },
     small: {
         width: theme.spacing(3),
@@ -30,7 +29,7 @@ function Pais(props = 'Pais') {
     const classes = useStyles()
 
     return (
-        <Grid container spacing={2} alignContent='center' >
+        <Grid container spacing={2} alignItems='center' className={classes.root} >
             <Grid item>
                 <Avatar variant='rounded' alt="Logo Pais" src={`https://flagcdn.com/40x30/${props.code}.png`
                 } className={classes.small} />
